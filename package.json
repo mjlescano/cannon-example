@@ -1,0 +1,25 @@
+{
+  "name": "cannon-example",
+  "version": "0.0.1",
+  "description": "This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.",
+  "main": "hardhat.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjlescano/cannon-example.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mjlescano/cannon-example/issues"
+  },
+  "homepage": "https://github.com/mjlescano/cannon-example#readme",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.5",
+    "ethers": "^5.6.0",
+    "hardhat": "^2.9.1",
+    "hardhat-cannon": "^0.2.2"
+  }
+}

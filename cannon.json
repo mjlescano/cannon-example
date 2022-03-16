@@ -1,0 +1,9 @@
+{
+  "chains": [
+      {
+          "deploy": ["uniswap-v3:0.0.1"],
+          "chainId": 10,
+          "port": 8545
+      }
+  ]
+}

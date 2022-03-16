@@ -18,6 +18,7 @@
   "homepage": "https://github.com/mjlescano/cannon-example#readme",
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.5",
+    "@openzeppelin/contracts": "^4.5.0",
     "ethers": "^5.6.0",
     "hardhat": "^2.9.1",
     "hardhat-cannon": "^0.2.2"

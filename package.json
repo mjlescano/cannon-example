@@ -19,8 +19,11 @@
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.5",
     "@openzeppelin/contracts": "^4.5.0",
+    "@uniswap/v3-periphery": "^1.4.0",
+    "@uniswap/v3-sdk": "^3.8.2",
     "ethers": "^5.6.0",
     "hardhat": "^2.9.1",
-    "hardhat-cannon": "^0.2.2"
+    "hardhat-cannon": "^0.2.3",
+    "hardhat-interact": "^0.2.0"
   }
 }

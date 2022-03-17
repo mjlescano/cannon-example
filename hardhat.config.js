@@ -1,9 +1,9 @@
 require('@nomiclabs/hardhat-ethers');
 require('hardhat-cannon');
+require('hardhat-interact');
 
-require('./tasks/create-test-token');
-require('./tasks/create-pool');
 require('./tasks/swap');
+require('./tasks/init-pool');
 
 /**
  * @type import('hardhat/config').HardhatUserConfig

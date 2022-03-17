@@ -10,21 +10,14 @@ First, spin up the Cannon node defined at the [`cannon.json`](cannon.json) file 
 npx hardhat cannon
 ```
 
-On another terminal, create a pair of test tokens that later will be used to swap on a pool, this command will also assign `10000` tokens to the user.
+Then, make sure to initialize the created pools with the initial prices:
 
 ```
-npx hardhat --network localhost create-test-token --name 'Synthetix USD' --symbol 'sUSD' --mint 10000
-npx hardhat --network localhost create-test-token --name 'USD Coin' --symbol 'USDC' --mint 10000
+npx hardhat --network localhost init-pool dai 1 usdc 1 500
 ```
 
-Then, create a pool on uniswap composed of the previously created tokens:
+Now, you will be able to execute your swap on the local Cannon network with the following task:
 
 ```
-npx hardhat --network localhost create-pool sUSD USDC 500
-```
-
-Now, you can simply swap between your tokens, like so:
-
-```
-npx hardhat --network localhost swap sUSD USDC 500
+npx hardhat --network localhost swap dai usdc 10 500
 ```

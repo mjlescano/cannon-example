@@ -2,39 +2,26 @@ name = "cannon-example"
 description = "Some cannon example"
 version = "0.0.1"
 
-[contract.dai]
-artifact = "TestToken"
-args = ["Maker DAI", "DAI"]
-step = 1
+[import.dai]
+source = "erc20:0.2.3"
+options.name = "Maker DAI"
+options.symbol = "DAI"
 
-[contract.usdc]
-artifact = "TestToken"
-args = ["USD Coin", "USDC"]
-step = 1
-
-[import.uniswap_dai_usdc]
-source = "uniswap-v3:0.0.1"
-options.token0_address = "<%= outputs.self.contracts.dai.address %>"
-options.token1_address = "<%= outputs.self.contracts.usdc.address %>"
-step = 2
-
-[import.uniswap_weth_usdc]
-source = "uniswap-v3:0.0.1"
-options.token0_address = "<%= outputs.uniswap_dai_usdc.contracts.weth.address %>"
-options.token1_address = "<%= outputs.self.contracts.usdc.address %>"
-step = 3
+[import.usdc]
+source = "erc20:0.2.3"
+options.name = "USD Coin"
+options.symbol = "USDC"
 
 [invoke.mint_dai]
-addresses = ["<%= outputs.self.contracts.dai.address %>"]
-abi = "<%= outputs.self.contracts.dai.abi %>"
+addresses = ["<%= outputs.dai.contracts.erc20.address %>"]
+abi = "<%= outputs.dai.contracts.erc20.abi %>"
 func = "mint"
 args = [5000]
 step = 4
 
 [invoke.mint_usdc]
-addresses = ["<%= outputs.self.contracts.usdc.address %>"]
-abi = "<%= outputs.self.contracts.usdc.abi %>"
-from = ""
+addresses = ["<%= outputs.usdc.contracts.erc20.address %>"]
+abi = "<%= outputs.usdc.contracts.erc20.abi %>"
 func = "mint"
 args = [5000]
 step = 4

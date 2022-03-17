@@ -22,13 +22,11 @@ task('init-pool', 'initialize the given pool with its initial prices')
 
     const poolAddress = await Factory.getPool(Token0Deployment.address, Token1Deployment.address, fee);
 
-    console.log(poolAddress)
+    const Pool = await hre.ethers.getContractAt(poolAbi, poolAddress);
 
-    const Pool = await hre.ethers.getContractAt(poolAbi, '0x0932128636AE3aAFb8b6c4037ce0C943a5AFb234');
+    // const tx = await Pool.initialize(encodeSqrtRatioX96(token0price, token1price).toString());
 
-    const tx = await Pool.initialize(encodeSqrtRatioX96(token0price, token1price).toString());
-
-    const receipt = await tx.wait();
+    // const receipt = await tx.wait();
 
     console.log(receipt)
   });

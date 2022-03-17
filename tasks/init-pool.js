@@ -26,7 +26,7 @@ task('init-pool', 'initialize the given pool with its initial prices')
 
     const Pool = await hre.ethers.getContractAt(poolAbi, '0x0932128636AE3aAFb8b6c4037ce0C943a5AFb234');
 
-    const tx = await Pool.initialize(encodeSqrtRatioX96(token0price, token1price));
+    const tx = await Pool.initialize(encodeSqrtRatioX96(token0price, token1price).toString());
 
     const receipt = await tx.wait();
 

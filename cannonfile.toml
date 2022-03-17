@@ -2,26 +2,33 @@ name = "cannon-example"
 description = "Some cannon example"
 version = "0.0.1"
 
+[setting.account]
+defaultValue = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
+
 [import.dai]
 source = "erc20:0.2.3"
 options.name = "Maker DAI"
 options.symbol = "DAI"
+step = 1
 
 [import.usdc]
 source = "erc20:0.2.3"
 options.name = "USD Coin"
 options.symbol = "USDC"
+step = 1
 
 [invoke.mint_dai]
 addresses = ["<%= outputs.dai.contracts.erc20.address %>"]
 abi = "<%= outputs.dai.contracts.erc20.abi %>"
+from = "<%= settings.account %>"
 func = "mint"
 args = [5000]
-step = 4
+step = 2
 
 [invoke.mint_usdc]
 addresses = ["<%= outputs.usdc.contracts.erc20.address %>"]
 abi = "<%= outputs.usdc.contracts.erc20.abi %>"
+from = "<%= settings.account %>"
 func = "mint"
 args = [5000]
-step = 4
+step = 2

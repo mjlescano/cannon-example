@@ -2,8 +2,7 @@ require('@nomiclabs/hardhat-ethers');
 require('hardhat-cannon');
 require('hardhat-interact');
 
-require('./tasks/swap');
-require('./tasks/init-pool');
+require('./tasks/transfer');
 
 /**
  * @type import('hardhat/config').HardhatUserConfig

@@ -1,6 +1,6 @@
 require('@nomiclabs/hardhat-ethers');
-require('hardhat-cannon');
 require('hardhat-interact');
+require('hardhat-cannon');
 
 require('./tasks/transfer');
 

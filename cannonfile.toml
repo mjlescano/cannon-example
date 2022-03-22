@@ -1,5 +1,5 @@
 name = "cannon-example"
-description = "Some cannon example"
+description = "Simple ERC20 usage cannon example"
 version = "0.0.1"
 
 [setting.account]
@@ -11,23 +11,9 @@ options.name = "Maker DAI"
 options.symbol = "DAI"
 step = 1
 
-[import.usdc]
-source = "erc20:0.2.3"
-options.name = "USD Coin"
-options.symbol = "USDC"
-step = 1
-
 [invoke.mint_dai]
 addresses = ["<%= outputs.dai.contracts.erc20.address %>"]
 abi = "<%= outputs.dai.contracts.erc20.abi %>"
-from = "<%= settings.account %>"
-func = "mint"
-args = [5000]
-step = 2
-
-[invoke.mint_usdc]
-addresses = ["<%= outputs.usdc.contracts.erc20.address %>"]
-abi = "<%= outputs.usdc.contracts.erc20.abi %>"
 from = "<%= settings.account %>"
 func = "mint"
 args = [5000]
